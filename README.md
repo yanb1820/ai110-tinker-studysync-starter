@@ -21,19 +21,19 @@ cd ai110-tinker-studysync-starter
 Create and activate a virtual environment:
 
 ```bash
-python3 -m venv .venv
+python3 -m venv .venv-codepath
 ```
 
 macOS, Linux, Git Bash or WSL:
 
 ```bash
-source .venv/bin/activate
+source .venv-codepath/bin/activate
 ```
 
 Windows PowerShell:
 
 ```powershell
-.\.venv\Scripts\Activate.ps1
+.\.venv-codepath\Scripts\Activate.ps1
 ```
 
 Install dependencies and run:
@@ -62,3 +62,7 @@ pytest
 - `test_scoring.py` — starting point for your own tests
 
 Your instructor will tell you which tinker you're on. Follow the activity on the course portal.
+
+## Tinker 1B Reflection
+
+The main issue was that apply_streak_bonus() was in scoring.py instead of scoring_helpers.py, and session_rating() didn’t have any test coverage. I accepted the AI suggestion as-is and moved the function to scoring_helpers.py, with no changes needed. The import and move worked on the first try. For the Part 3 breaker inputs, -10, 150, and 87.5 all returned a rating without crashing, so I didn’t consider any of them actual bugs for session_rating().
